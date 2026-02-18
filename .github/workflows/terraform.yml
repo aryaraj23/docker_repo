@@ -26,5 +26,8 @@ jobs:
       - name: Initialize terraform
         run: terraform init
 
+      - name: Terraform preview
+        run: terraform plan
+
         
           
