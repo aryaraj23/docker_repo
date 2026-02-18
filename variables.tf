@@ -1,4 +1,4 @@
-variable "ami_id" {
+variable "ami" {
   type = string
 }
 
