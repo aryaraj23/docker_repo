@@ -29,5 +29,8 @@ jobs:
       - name: Terraform preview
         run: terraform plan
 
+      - name: Apply the changes
+        run: terraform apply
+
         
           
