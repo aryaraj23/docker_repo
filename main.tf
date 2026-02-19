@@ -11,3 +11,32 @@ resource "aws_instance" "docker-ec2" {
     Name = "docker_ec2"
   }
 }
+
+resource "aws_security_group" "docker-sg" {
+  name = "var.docker_sg"
+  description = "Allow SSH and HTTP"
+
+  ingress {
+    description = "For SSH"
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_block = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "For HTTP"
+    from_port = 80
+    to_port = 80
+    protocol = "tcp"
+    cidr_block = [0.0.0.0/0"]
+  }
+
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = -1
+    cidr_block = ["0.0.0.0/0"]
+  }
+}
+
