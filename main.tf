@@ -34,6 +34,7 @@ resource "aws_instance" "docker-ec2" {
   ami = var.ami
   instance_type = var.instance_type
   key_name = var.key_name
+  aws_security_group_ids = [aws_security_group.docker_sg.id]
 
   tags = {
     Name = "docker_ec2"
