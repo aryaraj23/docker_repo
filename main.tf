@@ -2,16 +2,6 @@ provider "aws" {
   region = var.region
 }
 
-resource "aws_instance" "docker-ec2" {
-  ami = var.ami
-  instance_type = var.instance_type
-  key_name = var.key_name
-
-  tags = {
-    Name = "docker_ec2"
-  }
-}
-
 resource "aws_security_group" "docker_sg" {
   name = var.docker_sg
   description = "Allow SSH and HTTP"
@@ -39,4 +29,16 @@ resource "aws_security_group" "docker_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_instance" "docker-ec2" {
+  ami = var.ami
+  instance_type = var.instance_type
+  key_name = var.key_name
+
+  tags = {
+    Name = "docker_ec2"
+  }
+}
+
+
 
