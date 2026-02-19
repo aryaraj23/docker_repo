@@ -41,6 +41,3 @@ resource "aws_instance" "docker-ec2" {
     Name = "docker_ec2"
   }
 }
-
-
-
