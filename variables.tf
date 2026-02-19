@@ -14,6 +14,6 @@ variable "key_name" {
   type = string
 }
 
-variable "docker-sg" {
+variable "docker_sg" {
  type = string
 }
