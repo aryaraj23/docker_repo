@@ -12,8 +12,8 @@ resource "aws_instance" "docker-ec2" {
   }
 }
 
-resource "aws_security_group" "docker-sg" {
-  name = "var.docker_sg"
+resource "aws_security_group" "docker_sg" {
+  name = var.docker_sg
   description = "Allow SSH and HTTP"
 
   ingress {
